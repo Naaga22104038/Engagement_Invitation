@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Naaga & Venky — Engagement Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8d08a;
+      --gold-pale: #f5eacc;
+      --crimson: #8b1a2a;
+      --cream: #fdf6e3;
+      --deep: #1a0a00;
+      --blush: #f2ddd6;
+    }
+
+    body {
+      background: var(--deep);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lato', sans-serif;
+      overflow-x: hidden;
+      padding: 24px 16px;
+    }
+
+    /* === BACKGROUND PATTERN === */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(201,168,76,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139,26,42,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(201,168,76,0.04) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 620px;
+      background: var(--cream);
+      border-radius: 2px;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px var(--gold),
+        0 0 0 6px rgba(201,168,76,0.15),
+        0 0 60px rgba(201,168,76,0.2),
+        0 40px 80px rgba(0,0,0,0.6);
+      animation: cardReveal 1.2s cubic-bezier(0.16,1,0.3,1) both;
+    }
+
+    @keyframes cardReveal {
+      from { opacity: 0; transform: translateY(40px) scale(0.96); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* === HEADER BAND === */
+    .header-band {
+      background: var(--crimson);
+      padding: 14px 20px;
+      text-align: center;
+      border-bottom: 2px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+    .header-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 10px,
+        rgba(255,255,255,0.03) 10px,
+        rgba(255,255,255,0.03) 11px
+      );
+    }
+    .header-band p {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    /* === ORNAMENT TOP === */
+    .ornament {
+      text-align: center;
+      padding: 28px 20px 10px;
+      color: var(--gold);
+      font-size: 28px;
+      line-height: 1;
+      animation: fadeUp 1s 0.3s both;
+    }
+    .ornament svg {
+      width: 200px;
+      height: 40px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* === TOGETHER === */
+    .together {
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 5px;
+      color: var(--crimson);
+      text-transform: uppercase;
+      margin-top: 8px;
+      animation: fadeUp 1s 0.4s both;
+    }
+
+    /* === NAMES === */
+    .names-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 20px 30px 8px;
+      animation: fadeUp 1s 0.5s both;
+    }
+
+    .name-col {
+      flex: 1;
+      text-align: center;
+    }
+
+    .role-label {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #8a7050;
+      margin-bottom: 6px;
+    }
+
+    .name-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 46px;
+      font-weight: 300;
+      color: var(--crimson);
+      line-height: 1;
+    }
+
+    .name-main span {
+      display: block;
+      font-size: 13px;
+      font-style: italic;
+      font-weight: 300;
+      color: #8a7050;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    .ampersand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 70px;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      flex: 0 0 auto;
+      padding: 0 10px;
+      margin-top: -10px;
+    }
+
+    /* === DIVIDER === */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 40px;
+      animation: fadeUp 1s 0.6s both;
+    }
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .divider-diamond {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* === BODY TEXT === */
+    .invite-text {
+      text-align: center;
+      padding: 10px 40px;
+      animation: fadeUp 1s 0.65s both;
+    }
+    .invite-text p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 17px;
+      font-weight: 300;
+      color: #5a3e28;
+      line-height: 1.8;
+    }
+
+    /* === DATE BLOCK === */
+    .date-block {
+      margin: 18px 30px;
+      background: linear-gradient(135deg, #fff8ee, #fdf0d5);
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 1s 0.75s both;
+    }
+    .date-block::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--crimson), var(--gold));
+    }
+
+    .date-num {
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .date-num .day {
+      font-family: 'Cinzel', serif;
+      font-size: 56px;
+      font-weight: 600;
+      color: var(--crimson);
+      line-height: 1;
+    }
+    .date-num .month {
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      display: block;
+    }
+    .date-num .year {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #8a7050;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .date-separator {
+      width: 1px;
+      height: 70px;
+      background: linear-gradient(180deg, transparent, var(--gold), transparent);
+      flex-shrink: 0;
+    }
+
+    .date-details {
+      flex: 1;
+    }
+    .date-details .day-name {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: var(--crimson);
+      margin-bottom: 6px;
+    }
+    .date-details .time-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .date-details .time-icon {
+      font-size: 14px;
+    }
+    .date-details .time-text {
+      font-size: 12px;
+      color: #5a3e28;
+      letter-spacing: 1px;
+      font-weight: 300;
+    }
+
+    /* === VENUE BLOCK === */
+    .venue-block {
+      margin: 0 30px 18px;
+      padding: 0 0 4px;
+      text-align: center;
+      animation: fadeUp 1s 0.85s both;
+    }
+
+    .venue-details {}
+    .venue-label {
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .venue-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      font-style: italic;
+      color: #5a3e28;
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+    .venue-address {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #8a7050;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    /* === FLORAL MANDALA (CSS only) === */
+    .mandala-row {
+      text-align: center;
+      padding: 6px 0 4px;
+      animation: fadeUp 1s 0.9s both;
+    }
+    .mandala-row svg {
+      width: 80px;
+      height: 80px;
+      opacity: 0.85;
+    }
+
+    /* === FOOTER === */
+    .footer-band {
+      background: var(--gold);
+      padding: 12px 20px;
+      text-align: center;
+      border-top: 1px solid #b8922a;
+    }
+    .footer-band p {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--deep);
+      text-transform: uppercase;
+    }
+
+    /* === CORNER FLOURISH === */
+    .corner {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+    }
+    .corner svg { width: 60px; height: 60px; }
+    .corner-tl { top: 52px; left: 8px; }
+    .corner-tr { top: 52px; right: 8px; transform: scaleX(-1); }
+    .corner-bl { bottom: 40px; left: 8px; transform: scaleY(-1); }
+    .corner-br { bottom: 40px; right: 8px; transform: scale(-1,-1); }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 480px) {
+      .name-main { font-size: 36px; }
+      .ampersand { font-size: 54px; }
+      .date-num .day { font-size: 44px; }
+      .date-block { gap: 16px; padding: 16px 20px; }
+      .venue-block { margin: 0 16px 18px; }
+      .date-block { margin: 18px 16px; }
+      .names-block { padding: 20px 16px 8px; }
+      .invite-text { padding: 10px 20px; }
+      .corner { width: 44px; height: 44px; }
+      .corner svg { width: 44px; height: 44px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- CORNER FLOURISHES -->
+    <div class="corner corner-tl">
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 2 Q2 30 30 30" stroke="#c9a84c" stroke-width="1" fill="none"/>
+        <path d="M2 2 Q30 2 30 30" stroke="#c9a84c" stroke-width="1" fill="none"/>
+        <circle cx="2" cy="2" r="3" fill="#c9a84c"/>
+        <circle cx="30" cy="30" r="2" fill="#c9a84c"/>
+        <path d="M8 2 Q8 24 30 24" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.5"/>
+        <path d="M2 8 Q24 8 24 30" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.5"/>
+        <circle cx="8" cy="2" r="1.5" fill="#c9a84c" opacity="0.5"/>
+        <circle cx="2" cy="8" r="1.5" fill="#c9a84c" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="corner corner-tr">
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 2 Q2 30 30 30" stroke="#c9a84c" stroke-width="1" fill="none"/>
+        <path d="M2 2 Q30 2 30 30" stroke="#c9a84c" stroke-width="1" fill="none"/>
+        <circle cx="2" cy="2" r="3" fill="#c9a84c"/>
+        <circle cx="30" cy="30" r="2" fill="#c9a84c"/>
+        <path d="M8 2 Q8 24 30 24" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.5"/>
+        <path d="M2 8 Q24 8 24 30" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <!-- HEADER -->
+    <div class="header-band">
+      <p>✦ With Joyful Hearts ✦</p>
+    </div>
+
+    <!-- TOP ORNAMENT (SVG lotus/paisley) -->
+    <div class="ornament">
+      <svg viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- left wing -->
+        <path d="M100 20 Q80 4 55 8 Q70 14 100 20" fill="#c9a84c" opacity="0.4"/>
+        <path d="M100 20 Q72 2 44 10 Q64 18 100 20" fill="#c9a84c" opacity="0.25"/>
+        <path d="M100 20 Q85 8 62 10" stroke="#c9a84c" stroke-width="1" fill="none"/>
+        <path d="M100 20 Q78 6 50 12" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.6"/>
+        <!-- right wing -->
+        <path d="M100 20 Q120 4 145 8 Q130 14 100 20" fill="#c9a84c" opacity="0.4"/>
+        <path d="M100 20 Q128 2 156 10 Q136 18 100 20" fill="#c9a84c" opacity="0.25"/>
+        <path d="M100 20 Q115 8 138 10" stroke="#c9a84c" stroke-width="1" fill="none"/>
+        <path d="M100 20 Q122 6 150 12" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.6"/>
+        <!-- center -->
+        <circle cx="100" cy="20" r="5" fill="#c9a84c"/>
+        <circle cx="100" cy="20" r="3" fill="#fdf6e3"/>
+        <circle cx="100" cy="20" r="1.5" fill="#c9a84c"/>
+        <!-- small side dots -->
+        <circle cx="40" cy="13" r="2" fill="#c9a84c" opacity="0.6"/>
+        <circle cx="160" cy="13" r="2" fill="#c9a84c" opacity="0.6"/>
+        <circle cx="20" cy="20" r="1.5" fill="#c9a84c" opacity="0.4"/>
+        <circle cx="180" cy="20" r="1.5" fill="#c9a84c" opacity="0.4"/>
+        <!-- horizontal lines -->
+        <line x1="8" y1="20" x2="86" y2="20" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+        <line x1="114" y1="20" x2="192" y2="20" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+      </svg>
+    </div>
+
+    <div class="together">
+  Together in Love & Tradition
+    </div>
+
+    <!-- NAMES -->
+    <div class="names-block">
+      <div class="name-col">
+        <div class="name-main">Naaga</div>
+      </div>
+      <div class="ampersand">&amp;</div>
+      <div class="name-col">
+        <div class="name-main">Venky</div>
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- INVITE TEXT -->
+    <div class="invite-text">
+      <p>
+        We joyfully request the honour of your presence<br/>
+        to celebrate the auspicious engagement ceremony of our beloved
+      </p>
+    </div>
+
+    <!-- DATE BLOCK -->
+    <div class="date-block">
+      <div class="date-num">
+        <div class="day">14</div>
+        <span class="month">September</span>
+        <span class="year">2026</span>
+      </div>
+      <div class="date-separator"></div>
+      <div class="date-details">
+        <div class="day-name">Monday</div>
+        <div class="time-row">
+          <span class="time-icon">🌸</span>
+          <span class="time-text">Auspicious morning ceremony</span>
+        </div>
+        <div class="time-row">
+          <span class="time-icon">✨</span>
+          <span class="time-text">Your blessings are our joy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- VENUE BLOCK -->
+    <div class="venue-block">
+      <div class="venue-details">
+        <div class="venue-label">Venue</div>
+        <div class="venue-name">KRG Thirumana Mandabam</div>
+        <div class="venue-address">Linemedu, Salem, Tamil Nadu</div>
+      </div>
+    </div>
+
+    <!-- SMALL MANDALA ORNAMENT -->
+    <div class="mandala-row">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- outer petals -->
+        <g opacity="0.7">
+          <ellipse cx="40" cy="26" rx="4" ry="12" fill="#c9a84c" opacity="0.5"/>
+          <ellipse cx="40" cy="54" rx="4" ry="12" fill="#c9a84c" opacity="0.5"/>
+          <ellipse cx="26" cy="40" rx="12" ry="4" fill="#c9a84c" opacity="0.5"/>
+          <ellipse cx="54" cy="40" rx="12" ry="4" fill="#c9a84c" opacity="0.5"/>
+          <ellipse cx="28.5" cy="28.5" rx="4" ry="12" fill="#c9a84c" opacity="0.3" transform="rotate(45 28.5 28.5)"/>
+          <ellipse cx="51.5" cy="51.5" rx="4" ry="12" fill="#c9a84c" opacity="0.3" transform="rotate(45 51.5 51.5)"/>
+          <ellipse cx="51.5" cy="28.5" rx="4" ry="12" fill="#c9a84c" opacity="0.3" transform="rotate(-45 51.5 28.5)"/>
+          <ellipse cx="28.5" cy="51.5" rx="4" ry="12" fill="#c9a84c" opacity="0.3" transform="rotate(-45 28.5 51.5)"/>
+        </g>
+        <!-- inner circle ring -->
+        <circle cx="40" cy="40" r="14" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.6"/>
+        <circle cx="40" cy="40" r="9" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.6"/>
+        <!-- center -->
+        <circle cx="40" cy="40" r="5" fill="#8b1a2a"/>
+        <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
+        <circle cx="40" cy="40" r="1.5" fill="#8b1a2a"/>
+      </svg>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="divider" style="padding-top:0">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- FOOTER NOTE -->
+    <div class="invite-text" style="padding-bottom: 20px;">
+      <p style="font-size:15px; color:#8a7050;">
+        Your presence will make this occasion<br/>
+        truly memorable and blessed.
+      </p>
+    </div>
+
+    <!-- FOOTER BAND -->
+    <div class="footer-band">
+      <p>✦ Naaga & Venky · Engagement · 14 September 2026 ✦</p>
+    </div>
+
+    <!-- BOTTOM CORNERS -->
+    <div class="corner corner-bl">
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 2 Q2 30 30 30" stroke="#c9a84c" stroke-width="1" fill="none"/>
+        <path d="M2 2 Q30 2 30 30" stroke="#c9a84c" stroke-width="1" fill="none"/>
+        <circle cx="2" cy="2" r="3" fill="#c9a84c"/>
+        <circle cx="30" cy="30" r="2" fill="#c9a84c"/>
+      </svg>
+    </div>
+    <div class="corner corner-br">
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 2 Q2 30 30 30" stroke="#c9a84c" stroke-width="1" fill="none"/>
+        <path d="M2 2 Q30 2 30 30" stroke="#c9a84c" stroke-width="1" fill="none"/>
+        <circle cx="2" cy="2" r="3" fill="#c9a84c"/>
+        <circle cx="30" cy="30" r="2" fill="#c9a84c"/>
+      </svg>
+    </div>
+
+  </div>
+</body>
+</html>
