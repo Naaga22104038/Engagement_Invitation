@@ -447,7 +447,6 @@
     <div class="together">
   Together in Love & Tradition
     </div>
-
     <!-- NAMES -->
     <div class="names-block">
       <div class="name-col">
@@ -455,42 +454,27 @@
       </div>
       <div class="rings">
         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Left ring -->
-          <circle cx="30" cy="40" r="18" stroke="url(#goldGradL)" stroke-width="5" fill="none"/>
-          <!-- Right ring (back arc — hidden behind left) -->
-          <path d="M44,28 A18,18 0 1,1 44,52" stroke="url(#goldGradR)" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <!-- Left ring front arc (on top) -->
-          <path d="M36,28 A18,18 0 1,0 36,52" stroke="url(#goldGradL)" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <!-- Diamond on left ring -->
-          <circle cx="30" cy="22" r="3.5" fill="url(#diamondGrad)" />
-          <circle cx="30" cy="22" r="1.8" fill="white" opacity="0.7"/>
-          <!-- Diamond on right ring -->
-          <circle cx="50" cy="22" r="3.5" fill="url(#diamondGrad)" />
-          <circle cx="50" cy="22" r="1.8" fill="white" opacity="0.7"/>
-          <!-- Sparkles -->
-          <g fill="#e8d08a" opacity="0.8">
-            <polygon points="15,15 16.2,18.5 20,18.5 17.1,20.6 18.3,24.1 15,22 11.7,24.1 12.9,20.6 10,18.5 13.8,18.5" transform="scale(0.5) translate(14,8)"/>
-            <polygon points="65,10 66,13 69,13 66.5,14.8 67.5,17.8 65,16 62.5,17.8 63.5,14.8 61,13 64,13" transform="scale(0.45) translate(10,6)"/>
-          </g>
-          <defs>
-            <linearGradient id="goldGradL" x1="12" y1="22" x2="48" y2="58" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#f5e199"/>
-              <stop offset="40%" stop-color="#c9a84c"/>
-              <stop offset="70%" stop-color="#e8d08a"/>
-              <stop offset="100%" stop-color="#a07830"/>
-            </linearGradient>
-            <linearGradient id="goldGradR" x1="32" y1="22" x2="68" y2="58" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#f5e199"/>
-              <stop offset="40%" stop-color="#c9a84c"/>
-              <stop offset="70%" stop-color="#e8d08a"/>
-              <stop offset="100%" stop-color="#a07830"/>
-            </linearGradient>
-            <radialGradient id="diamondGrad" cx="40%" cy="30%">
-              <stop offset="0%" stop-color="#fff9e6"/>
-              <stop offset="50%" stop-color="#c9a84c"/>
-              <stop offset="100%" stop-color="#8b6914"/>
-            </radialGradient>
-          </defs>
+          <!-- Right ring - full circle (drawn first so left ring overlaps) -->
+          <circle cx="50" cy="40" r="18" stroke="#c9a84c" stroke-width="5" fill="none"/>
+          <!-- Left ring - back half (behind right ring) -->
+          <path d="M36,52 A18,18 0 1,1 36,28" stroke="#c9a84c" stroke-width="5" fill="none" stroke-linecap="butt"/>
+          <!-- Right ring overlap cover (cream fill to fake the interlock) -->
+          <path d="M44,28 A18,18 0 0,1 44,52" stroke="#fdf6e3" stroke-width="6" fill="none" stroke-linecap="butt"/>
+          <!-- Right ring front arc redrawn on top -->
+          <path d="M44,28 A18,18 0 0,1 44,52" stroke="#c9a84c" stroke-width="5" fill="none" stroke-linecap="butt"/>
+          <!-- Left ring front arc (on top of everything) -->
+          <path d="M36,28 A18,18 0 0,0 36,52" stroke="#e8d08a" stroke-width="5" fill="none" stroke-linecap="butt"/>
+          <!-- Gem on left ring top -->
+          <circle cx="30" cy="22" r="4" fill="#8b1a2a"/>
+          <circle cx="30" cy="22" r="2.2" fill="#fff" opacity="0.6"/>
+          <!-- Gem on right ring top -->
+          <circle cx="50" cy="22" r="4" fill="#8b1a2a"/>
+          <circle cx="50" cy="22" r="2.2" fill="#fff" opacity="0.6"/>
+          <!-- Sparkle dots -->
+          <circle cx="16" cy="24" r="1.5" fill="#c9a84c" opacity="0.7"/>
+          <circle cx="64" cy="24" r="1.5" fill="#c9a84c" opacity="0.7"/>
+          <circle cx="13" cy="30" r="1" fill="#c9a84c" opacity="0.5"/>
+          <circle cx="67" cy="30" r="1" fill="#c9a84c" opacity="0.5"/>
         </svg>
       </div>
       <div class="name-col">
